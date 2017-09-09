@@ -1,0 +1,6 @@
+<h1>Editing Item</h1>
+
+<%= render 'form', item: @item, feed: @feed, url: feed_item_path(@feed, @item) %>
+
+<%= link_to 'Show', feed_item_path(@feed, @item) %> |
+<%= link_to 'Back', feed_items_path(@feed) %>

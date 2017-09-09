@@ -1,0 +1,57 @@
+<%= form_with(model: item, local: true, url: url) do |form| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url, id: :item_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :item_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :item_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :published_at %>
+    <%= form.datetime_select :published_at, id: :item_published_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :guid %>
+    <%= form.text_field :guid, id: :item_guid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :feed_id %>
+    <%= form.hidden_field :feed_id, value: @feed.id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category, id: :item_category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comments %>
+    <%= form.text_field :comments, id: :item_comments %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

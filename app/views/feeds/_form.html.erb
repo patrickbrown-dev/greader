@@ -16,6 +16,26 @@
     <%= form.text_field :url, id: :feed_url %>
   </div>
 
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :feed_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :feed_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :language %>
+    <%= form.text_field :language, id: :feed_language %>
+  </div>
+
+  <div class="field">
+    <%= form.label :published_at %>
+    <%= form.datetime_select :published_at, id: :feed_published_at %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

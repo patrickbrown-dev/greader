@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @item.url %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @item.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @item.description.html_safe %>
+</p>
+
+<p>
+  <strong>Published at:</strong>
+  <%= @item.published_at %>
+</p>
+
+<p>
+  <strong>Guid:</strong>
+  <%= @item.guid %>
+</p>
+
+<p>
+  <strong>Feed:</strong>
+  <%= link_to @item.feed.title, feed_url(@item.feed) %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @item.category %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @item.comments %>
+</p>
+
+<%= link_to 'Edit', edit_feed_item_path(@item.feed, @item) %> |
+<%= link_to 'Back', feed_items_path(@item.feed) %>
