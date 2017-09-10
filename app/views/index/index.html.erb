@@ -1,0 +1,18 @@
+<table id="gr-body">
+  <tbody>
+    <% @items.each_with_index do |item, i| %>
+    <tr class="item <% if i%2 == 1 %>odd<% end %>">
+      <td class="item-number"><%= i %>.</td>
+      <td>
+        <span class="item-title"><%= link_to item.title.html_safe, item.url %></span><br />
+        <small class="item-details">
+          <%= item.feed.title %>
+          | <%= time_ago_in_words(item.published_at) %> ago
+          <% if item.category %> | <%= item.category %><% end %>
+          <% if item.comments %> | <%= link_to "comments", item.comments %><% end %>
+        </small>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
