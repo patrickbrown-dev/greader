@@ -12,7 +12,7 @@ class UpdateFeedService < ApplicationService
     @feed.title = rss.channel.title
     @feed.description = rss.channel.description
     @feed.language = rss.channel.try(:language)
-    @feed.published_at = rss.channel.try(:pubDate, Time.now)
+    @feed.published_at = rss.channel.try(:pubDate)
     @feed.save!
 
     items = []
